@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/getPostByUser', 'BlogController@getPostByUser');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/addRole', 'BlogController@addRole')->name('add.role');
 Route::get('/addPermission', 'BlogController@addPermission')->name('add.permission');
