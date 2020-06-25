@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
@@ -35,5 +36,10 @@ class BlogController extends Controller
     {
         $user = User::findOrFail(1);
         return $permissionNames = $user->getRoleNames();
+    }
+
+    public function getPostByUser()
+    {
+        return $user = User::with(['posts'])->findOrFail(1);
     }
 }
