@@ -10,19 +10,26 @@ use Spatie\Permission\Models\Role;
 
 class BlogController extends Controller
 {
+
+    public function getAllRoles()
+    {
+        $roles = Role::all();
+        return view('roles.index', ['roles'=>$roles]);
+    }
+
     public function addRole()
     {
-        $role = Role::create(['name' => 'collaborator']);
+        $role = Role::create(['name' => 'admin']);
     }
     public function addPermission()
     {
-        $permission = Permission::create(['name' => 'view-post']);
+        $permission = Permission::create(['name' => 'manage-roles']);
     }
 
     public function givePermissionToRole($id)
     {
         $role = Role::findById($id);
-        $permission = Permission::findById(1);
+        $permission = Permission::findById(3);
         $role->givePermissionTo($permission);
     }
 
