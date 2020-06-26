@@ -23,8 +23,12 @@ class BlogController extends Controller
 
     public function addRole(Request $request)
     {
-        $role = Role::create(['name' => $request->get('name')]);
-        return redirect()->route('get.all.roles');
+        $this->validate($request, [
+            'role' => 'required|unique:roles,name'
+            ]);
+
+        $role = Role::create(['name' => $request->input('role')]);
+        return redirect()->route(   'get.all.roles');
     }
     public function addPermission()
     {
