@@ -16,10 +16,15 @@ class BlogController extends Controller
         $roles = Role::all();
         return view('roles.index', ['roles'=>$roles]);
     }
-
-    public function addRole()
+    public function createRole()
     {
-        $role = Role::create(['name' => 'admin']);
+        return view('roles.create');
+    }
+
+    public function addRole(Request $request)
+    {
+        $role = Role::create(['name' => $request->get('name')]);
+        return redirect()->route('get.all.roles');
     }
     public function addPermission()
     {
