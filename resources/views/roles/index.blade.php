@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Cargos
-                    <a class="float-right btn btn-success btn-sm" href="#">Criar novo cargo</a>
+                    <a class="float-right btn btn-success btn-sm" href="{{ route('create.role') }}">Criar novo cargo</a>
                 </div>
                 @php $i = 1; @endphp
                 <div class="card-body">
