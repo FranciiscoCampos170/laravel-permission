@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,4 @@ Route::get('/addRoleToUser', 'BlogController@giveRoleToUser')->name('add.role.to
 Route::get('/getUserPermission', 'BlogController@getUserPermission')->name('get.user.permission');
 Route::get('/getAllRoles', 'BlogController@getAllRoles')->name('get.all.roles');
 Route::get('/createRole', 'BlogController@createRole')->name('create.role');
+Route::get('/assingRole', 'BlogController@assingRole')->name('assign.role');
