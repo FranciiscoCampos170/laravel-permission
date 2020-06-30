@@ -60,7 +60,7 @@
                                         <a class="dropdown-item" href="{{ route('get.all.roles') }}">
                                                 Gerir cargos
                                         </a>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="{{route ('assign.role')}}">
                                                 Atribuir cargo
                                         </a>
                                     </div>
