@@ -30,6 +30,13 @@ class BlogController extends Controller
         $role = Role::create(['name' => $request->input('role')]);
         return redirect()->route(   'get.all.roles');
     }
+
+    public function assingRole()
+    {
+        $roles = Role::all();
+        $users = User::all();
+        return view('roles.addrole', ['roles' => $roles, 'users'=>$users]);
+    }
     public function addPermission()
     {
         $permission = Permission::create(['name' => 'manage-roles']);
